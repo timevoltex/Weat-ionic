@@ -1,3 +1,6 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+.ion-purple{
+  --background: #8217FF;
+}

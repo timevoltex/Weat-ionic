@@ -1,0 +1,12 @@
+
+.nav-btn{
+  --color-selected:#8217FF;
+  --color-focused:#8217FF;
+}
+.navImage{
+  --padding-start:0;
+  --padding-end: 0;
+  width: 30%;
+  height: auto;
+  
+}
