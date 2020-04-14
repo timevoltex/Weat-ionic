@@ -114,7 +114,7 @@ const Home: React.FC<RouteComponentProps> = ({history}) => {
     <Page>
       <IonHeader>
         <IonToolbar style={{height:"50px"}}>
-          <IonTitle>현재 주소</IonTitle>
+          <IonTitle style={{textAlign:'center'}}>현재 주소</IonTitle>
           <IonText slot="start">
             <img src="assets/icon/locationg-01.png" alt="loc" style={{width:"50px"}}/>
           </IonText>
