@@ -61,7 +61,7 @@ const App: React.FC = () => (
               component={NewsFeed}
               exact={true}
             ></Route>
-            <Route path="/:tab(newsfeed)/detail" component={MenuDetail} />
+            {/* <Route path="/:tab(newsfeed)/detail" component={MenuDetail} /> */}
             <Route path="/:tab(add)" component={Add} exact={true} />
             <Route path="/:tab(test)" component={Test} exact={true} />
             {/* <Route path="/tab" component={Home} exact={true}/> */}
