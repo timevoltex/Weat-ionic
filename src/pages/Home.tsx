@@ -10,6 +10,7 @@ import {
   IonSearchbar,
   IonList,
   IonTitle,
+  IonFooter,
 } from "@ionic/react";
 import { location, pencil, time } from "ionicons/icons";
 import "./Home.css";
@@ -100,7 +101,7 @@ const items: List[] = [
 ];
 
 const Page = styled(IonPage)`
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 `;
 
 const Toolbar = styled.div`
@@ -140,7 +141,10 @@ const Home: React.FC<RouteComponentProps> = ({history}) => {
               maxWidth: "334px",
               margin: "0 auto 10px auto"
             }}
-            
+            onClick={(e) => {
+              e.preventDefault();
+              history.push('/home/detail');
+            }}
           >
             <img src={image.src} alt="test" style={{ width: "79px", height:"79px", display:"inline-block", float:"left", margin:"auto 0" }} />
             <div style={{ padding: "8px 10px", display:"flex", flexDirection:"column", width:"77%" }}>
@@ -204,6 +208,14 @@ const Home: React.FC<RouteComponentProps> = ({history}) => {
           </div>
         ))}
         </IonList>
+        <IonFooter>
+            <IonList style={{display:"flex", textAlign:'center'}} lines='inset'>
+              <p style={{fontSize:'8px', flex:1}}>이용약관</p>
+              <p style={{fontSize:'8px', flex:1}}>자주 묻는 질문</p>
+              <p style={{fontSize:'8px', flex:1}}>공지사항</p>
+              <p style={{fontSize:'8px', flex:1}}>이벤트</p>
+            </IonList>
+        </IonFooter>
       </IonContent>
     </Page>
     </>
