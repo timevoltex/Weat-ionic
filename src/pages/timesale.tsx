@@ -99,7 +99,7 @@ const items: List[] = [
   }
 ];
 
-const Timesale: React.FC<RouteComponentProps> = ({ history }) => {
+const Timesale = () => {
   const [searchText, setSearchText] = useState("");
   return (
     <IonPage>
