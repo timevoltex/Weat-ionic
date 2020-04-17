@@ -44,6 +44,50 @@ const OrderList = () => {
         </Item>
         <IonFooter style={{textAlign:'center'}}>리뷰쓰기</IonFooter>
         </div>
+        <div style={{width:'90vw', margin:'auto', border:'1px solid gray'}}>
+        <Item>
+          <Label>
+            <p>시간</p>
+            <p>가게명</p>
+            <p>메뉴</p>
+          </Label>
+          <IonBadge>00,000원</IonBadge>
+        </Item>
+        <IonFooter style={{textAlign:'center'}}>리뷰쓰기</IonFooter>
+        </div>
+        <div style={{width:'90vw', margin:'auto', border:'1px solid gray'}}>
+        <Item>
+          <Label>
+            <p>시간</p>
+            <p>가게명</p>
+            <p>메뉴</p>
+          </Label>
+          <IonBadge>00,000원</IonBadge>
+        </Item>
+        <IonFooter style={{textAlign:'center'}}>리뷰쓰기</IonFooter>
+        </div>
+        <div style={{width:'90vw', margin:'auto', border:'1px solid gray'}}>
+        <Item>
+          <Label>
+            <p>시간</p>
+            <p>가게명</p>
+            <p>메뉴</p>
+          </Label>
+          <IonBadge>00,000원</IonBadge>
+        </Item>
+        <IonFooter style={{textAlign:'center'}}>리뷰쓰기</IonFooter>
+        </div>
+        <div style={{width:'90vw', margin:'auto', border:'1px solid gray'}}>
+        <Item>
+          <Label>
+            <p>시간</p>
+            <p>가게명</p>
+            <p>메뉴</p>
+          </Label>
+          <IonBadge>00,000원</IonBadge>
+        </Item>
+        <IonFooter style={{textAlign:'center'}}>리뷰쓰기</IonFooter>
+        </div>
       </IonContent>
     </IonPage>
   );
