@@ -6,6 +6,7 @@ import {
   addCircle,
   search,
   person,
+  receiptOutline,
 } from "ionicons/icons";
 
 import Home from "./pages/Home";
@@ -43,6 +44,8 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
+import StoreDetail from "./pages/storeDetail";
+import OrderList from "./pages/orderList";
 
 /* Theme variables */
 // import './theme/variables.css';
@@ -60,9 +63,11 @@ const App: React.FC = () => (
               path="/:tab(newsfeed)"
               component={NewsFeed}
               exact={true}
-            ></Route>
+            />
+            <Route path="/:tab(newsfeed)/store" component={StoreDetail} exact={true}/>
             {/* <Route path="/:tab(newsfeed)/detail" component={MenuDetail} /> */}
             <Route path="/:tab(add)" component={Add} exact={true} />
+            <Route path="/:tab(orderlist)" component={OrderList} exact={true} />
             <Route path="/:tab(test)" component={Test} exact={true} />
             {/* <Route path="/tab" component={Home} exact={true}/> */}
             <Route exact path="/" render={() => <Redirect to="/home" />} />
@@ -77,12 +82,12 @@ const App: React.FC = () => (
             <IonTabButton className="nav-btn" tab="add" href="/add">
               <IonIcon icon={addCircle} />
             </IonTabButton>
-            <IonTabButton className="nav-btn" tab="test" href="/test">
-              <IonIcon icon={search} />
+            <IonTabButton className="nav-btn" tab="orderList" href="/orderlist">
+              <IonIcon icon={receiptOutline} />
             </IonTabButton>
-             {/* <IonTabButton tab="home" href="/">
-          <IonIcon icon={person} />
-        </IonTabButton> */}
+             <IonTabButton className="nav-btn" tab="test" href="/test">
+            <IonIcon icon={person} />
+        </IonTabButton>
           </IonTabBar>
         </IonTabs>
       </IonPage>
