@@ -21,11 +21,12 @@ import {
 import { location, personCircleOutline } from "ionicons/icons";
 import styled from "styled-components";
 import Array from "./list";
+import { RouteComponentProps } from "react-router";
 const Content = styled(IonContent)`
   padding: 10px !important;
 `;
 
-export default function MenuDetail() {
+const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
   return (
     <IonPage>
       <IonHeader>
@@ -39,6 +40,10 @@ export default function MenuDetail() {
               src="assets/icon/lists-01.png"
               alt="list"
               style={{ width: "50px" }}
+              onClick={(e) => {
+                e.preventDefault();
+                history.push('/home/timesale');
+              }}
             />
           </IonText>
         </IonToolbar>
@@ -124,18 +129,22 @@ export default function MenuDetail() {
           <FontAwesomeIcon icon={faEllipsisV} style={{ fontSize: "20px" }} />
           </div>
         </div> */}
+        <div
+          style={{
+            backgroundColor: "#9943FC",
+            color: "#fff",
+            height: "50px",
+            textAlign: "center",
+            padding: "14px",
+            position:"fixed",
+            bottom:0,
+            width:'100%'
+          }}
+        >
+          예약하기
+        </div>
       </Content>
-      <IonFooter
-        style={{
-          backgroundColor: "#9943FC",
-          color: "#fff",
-          height: "50px",
-          textAlign: "center",
-          padding: "14px",
-        }}
-      >
-        예약하기
-      </IonFooter>
     </IonPage>
   );
 }
+export default MenuDetail;
