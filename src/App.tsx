@@ -46,6 +46,7 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 import StoreDetail from "./pages/storeDetail";
 import OrderList from "./pages/orderList";
+import Mypage from "./pages/myPage";
 
 /* Theme variables */
 // import './theme/variables.css';
@@ -57,37 +58,55 @@ const App: React.FC = () => (
         <IonTabs>
           <IonRouterOutlet>
             <Route path="/:tab(home)" component={Home} exact={true} />
-            <Route path="/:tab(home)/detail" component={MenuDetail} exact={true} />
-            <Route path="/:tab(home)/timesale" component={Timesale} exact={true} />
             <Route
-              path="/:tab(newsfeed)"
-              component={NewsFeed}
+              path="/:tab(home)/detail"
+              component={MenuDetail}
               exact={true}
             />
-            <Route path="/:tab(newsfeed)/store" component={StoreDetail} exact={true}/>
+            <Route
+              path="/:tab(home)/timesale"
+              component={Timesale}
+              exact={true}
+            />
+            <Route path="/:tab(newsfeed)" component={NewsFeed} exact={true} />
+            <Route
+              path="/:tab(newsfeed)/store"
+              component={StoreDetail}
+              exact={true}
+            />
             {/* <Route path="/:tab(newsfeed)/detail" component={MenuDetail} /> */}
             <Route path="/:tab(add)" component={Add} exact={true} />
             <Route path="/:tab(orderlist)" component={OrderList} exact={true} />
+            <Route
+              path="/:tab(orderlist)/store"
+              component={StoreDetail}
+              exact={true}
+            />
+            <Route path="/:tab(myPage)" component={Mypage} exact={true} />
             <Route path="/:tab(test)" component={Test} exact={true} />
             {/* <Route path="/tab" component={Home} exact={true}/> */}
             <Route exact path="/" render={() => <Redirect to="/home" />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
-            <IonTabButton className="nav-btn" tab="home" href="/home">
-              <IonIcon icon={trophy} />
+            <IonTabButton className="nav-btn home" tab="home" href="/home">
+              <div className="icon"></div>
+              {/* <img src="assets/icon/homeg-01.png" alt="tab" /> */}
             </IonTabButton>
-            <IonTabButton className="nav-btn" tab="newsfeed" href="/newsfeed">
-              <IonIcon icon={chatboxEllipses} />
+            <IonTabButton className="nav-btn newsfeed" tab="newsfeed" href="/newsfeed">
+              <div className='icon'></div>
             </IonTabButton>
-            <IonTabButton className="nav-btn" tab="add" href="/add">
-              <IonIcon icon={addCircle} />
+            <IonTabButton className="nav-btn add" tab="add" href="/add">
+              <div className='icon'></div>
             </IonTabButton>
-            <IonTabButton className="nav-btn" tab="orderList" href="/orderlist">
-              <IonIcon icon={receiptOutline} />
+            <IonTabButton className="nav-btn orderlist" tab="orderList" href="/orderlist">
+              <div className='icon'></div>
             </IonTabButton>
-             <IonTabButton className="nav-btn" tab="test" href="/test">
-            <IonIcon icon={person} />
-        </IonTabButton>
+            <IonTabButton className="nav-btn mypage" tab="myPage" href="/myPage">
+              <div className='icon'></div>
+            </IonTabButton>
+            <IonTabButton className="nav-btn" tab="test" href="/test">
+              <IonIcon icon={person} />
+            </IonTabButton>
           </IonTabBar>
         </IonTabs>
       </IonPage>
