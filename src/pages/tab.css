@@ -3,6 +3,44 @@
   --color-selected:#8217FF;
   --color-focused:#8217FF;
 }
+
+.nav-btn .icon{
+  width:50px; height:50px;
+}
+.nav-btn.home[aria-selected=true] .icon{
+  background: url(/assets/icon/home-01.png) no-repeat center/cover;
+}
+.nav-btn.home .icon{
+  background: url(/assets/icon/homeg-01.png) no-repeat center/cover;
+}
+.nav-btn.newsfeed .icon{
+  background: url(/assets/icon/feedg-01.png) no-repeat center/contain;
+}
+.nav-btn.newsfeed[aria-selected=true] .icon{
+  background: url(/assets/icon/feed-01.png) no-repeat center/cover;
+
+}
+.nav-btn.add .icon{
+  background: url(/assets/icon/creat-gray-01.png) no-repeat center/contain;
+}
+.nav-btn.add[aria-selected=true] .icon{
+  background: url(/assets/icon/creat-01.png) no-repeat center/cover;
+
+}
+.nav-btn.orderlist .icon{
+  background: url(/assets/icon/list-01-01.png) no-repeat center/contain;
+}
+.nav-btn.orderlist[aria-selected=true] .icon{
+  background: url(/assets/icon/list-01.png) no-repeat center/cover;
+
+}
+.nav-btn.mypage .icon{
+  background: url(/assets/icon/mypageg-01.png) no-repeat center/contain;
+}
+.nav-btn.mypage[aria-selected=true] .icon{
+  background: url(/assets/icon/mypage-01.png) no-repeat center/cover;
+
+}
 .navImage{
   --padding-start:0;
   --padding-end: 0;
