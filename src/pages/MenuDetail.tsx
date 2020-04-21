@@ -1,38 +1,29 @@
 import React from "react";
 import {
+  IonPage,
   IonHeader,
   IonToolbar,
   IonText,
-  IonIcon,
-  IonContent,
-  IonBackButton,
   IonButtons,
-  IonPage,
   IonTitle,
   IonChip,
-  IonFooter,
+  IonItem,
+  IonLabel,
+  IonNote,
+  IonListHeader,
+  IonList,
 } from "@ionic/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHashtag,
-  faStoreAlt,
-  faEllipsisV,
-} from "@fortawesome/free-solid-svg-icons";
-import { location, personCircleOutline } from "ionicons/icons";
-import styled from "styled-components";
-import Array from "./list";
-import { RouteComponentProps } from "react-router";
-const Content = styled(IonContent)`
-  padding: 10px !important;
-`;
+import { useHistory } from "react-router-dom";
+import { Content, BackButton, DetailContainer } from "./theme";
 
-const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
+const MenuDetail = () => {
+  const history = useHistory();
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" text="" color="gray" />
+            <BackButton text="" icon="null" defaultHref="/home"></BackButton>
           </IonButtons>
           <IonTitle>상호명</IonTitle>
           <IonText slot="end" style={{ fontSize: "10px" }}>
@@ -42,7 +33,7 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
               style={{ width: "50px" }}
               onClick={(e) => {
                 e.preventDefault();
-                history.push('/home/timesale');
+                history.push("/home/timesale");
               }}
             />
           </IonText>
@@ -50,34 +41,47 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
       </IonHeader>
       <Content>
         <div
-          style={{ width: "100%", height: "100vw", backgroundColor: "gray" }}
+          style={{ width: "100%", height: "100vw", backgroundColor: "gold" }}
         ></div>
-        <div className="container" >
-          <div className="timebox" style={{ padding: "16px" }}>
-            <p>시간</p>
-            <p>
-              메뉴<span style={{ float: "right" }}>구매 인원</span>
-            </p>
-            <p>
-              할인율 가격<span style={{ float: "right" }}>잔여물량</span>
-            </p>
-          </div>
-          <div className="detailbox"style={{ backgroundColor: "#c2c2c2", padding:'16px' } }>
-            <div className="info" >
-              <p>
-                영업시간 <span>11:00~20:00</span>
-              </p>
-              <p>
-                가게위치 <span>강원도 춘천시 후평동 198-345</span>
-              </p>
-              <p>
-                전화번호 <span>033-652-6516</span>
-              </p>
-              <p>
-                해시태그 <IonChip>양식</IonChip>
+        <DetailContainer className="container">
+          <IonList>
+            <IonItem lines="none">
+              <IonLabel>시간</IonLabel>
+            </IonItem>
+            <IonItem lines="none">
+              <IonLabel>메뉴</IonLabel>
+              <IonNote>구매 인원</IonNote>
+            </IonItem>
+            <IonItem lines="none">
+              <IonLabel>할인율 가격</IonLabel>
+              <IonNote>잔여 물량</IonNote>
+            </IonItem>
+          </IonList>
+          <IonList>
+            <IonListHeader>상세정보</IonListHeader>
+            <IonItem lines="none">
+              <IonLabel>영업시간</IonLabel>
+              <IonNote >11:00 ~ 19:00</IonNote>
+            </IonItem>
+            <IonItem lines="none">
+              <IonLabel>가게위치</IonLabel>
+              <IonNote >
+                강원도 춘천시 후평동 198-345
+              </IonNote>
+            </IonItem>
+            <IonItem lines="none">
+              <IonLabel>전화번호</IonLabel>
+              <IonNote >033-652-6516</IonNote>
+            </IonItem>
+            <IonItem lines="none">
+              <IonLabel>해시태그</IonLabel>
+              <IonNote >
+                <IonChip>양식</IonChip>
                 <IonChip>매콤</IonChip>
                 <IonChip>아늑</IonChip>
-              </p>
+              </IonNote>
+            </IonItem>
+            <IonItem lines="none" className="info">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At
                 officiis placeat aliquid blanditiis enim quod sunt explicabo
@@ -88,9 +92,9 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
                 natus molestias hic numquam, quia facere culpa. Veritatis,
                 repudiandae?
               </p>
-            </div>
-            <div className="map-container">
-              <p>위치</p>
+            </IonItem>
+            <IonListHeader>위치</IonListHeader>
+            <IonItem lines="none">
               <div
                 className="map"
                 style={{
@@ -99,8 +103,8 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
                   backgroundColor: "cyan",
                 }}
               ></div>
-            </div>
-            <div className="timesale">
+            </IonItem>
+            <IonItem lines="none" className="timesale">
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
                 suscipit deserunt consequatur officia! Ipsa nobis quae tempore
@@ -111,9 +115,9 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
                 voluptate voluptatibus, repudiandae sit aperiam neque id tenetur
                 minima dolore?
               </p>
-            </div>
-          </div>
-        </div>
+            </IonItem>
+          </IonList>
+        </DetailContainer>
         {/* <div style={{display:'flex', justifyContent:'space-between'}}>
           <div style={{ display: "flex" }}>
           <IonIcon icon={personCircleOutline} style={{ fontSize: "35px" }} />
@@ -136,9 +140,9 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
             height: "50px",
             textAlign: "center",
             padding: "14px",
-            position:"fixed",
-            bottom:0,
-            width:'100%'
+            position: "fixed",
+            bottom: 0,
+            width: "100%",
           }}
         >
           예약하기
@@ -146,5 +150,5 @@ const MenuDetail: React.FC<RouteComponentProps>=({history}) => {
       </Content>
     </IonPage>
   );
-}
+};
 export default MenuDetail;
