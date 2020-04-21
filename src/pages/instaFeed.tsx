@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonItem,
   IonText,
@@ -70,6 +70,18 @@ const items: List[] = [
 
 const InstaFeed = () => {
   const history = useHistory();
+  const [like, setLike] = useState(false);
+  
+
+  function toggleLike(){
+    if(like){
+      return <img src="assets/icon/like-01.png" alt="heart_online" style={{width:'50px'}}/>;
+    }
+    else{
+      return <img src="assets/icon/like-01-01.png" alt="heart" style={{width:'50px'}}/>;
+    }
+  }
+  
   return(
   <div className="feedContainer">
     <IonItem lines="none" style={{ height: "8vh" }}>
@@ -101,15 +113,12 @@ const InstaFeed = () => {
       ))}
     </IonSlides>
     <Label lines="none" style={{ marginTop: "10px" }}>
-      <IonIcon
-        icon={heart}
-        style={{ fontSize: "29px", paddingRight: "10px" }}
-      />
-      <IonIcon
-        icon={chatboxEllipses}
-        style={{ fontSize: "29px", paddingRight: "10px" }}
-      />
-      <IonIcon icon={bookmark} style={{ fontSize: "29px" }} />
+      <div onClick={e => {setLike(!like)}}>
+      {toggleLike()}
+      </div>
+      <img src="assets/icon/feedg-01.png" alt="heart" style={{width:'50px'}}/>
+      <img src="assets/icon/bookmark-01-01.png" alt="heart" style={{width:'50px'}}/>
+      
       <div
         style={{
           overflow: "hidden",

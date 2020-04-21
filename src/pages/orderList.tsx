@@ -14,7 +14,7 @@ import {
 } from "@ionic/react";
 import { options } from "ionicons/icons";
 import styled from 'styled-components';
-
+import {useHistory} from 'react-router-dom'
 const Item = styled(IonItem)`
   --padding-start: 0;
 `
@@ -23,12 +23,15 @@ const Label = styled(IonLabel)`
 `
 
 const OrderList = () => {
+  const history = useHistory();
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>주문내역</IonTitle>
-          <IonIcon icon={options} slot="end" />
+          <div style={{textAlign:"end"}}>
+            <img src="assets/icon/settings-01-01.png" alt="setting" style={{width:'50px'}}/>
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -37,7 +40,10 @@ const OrderList = () => {
         <Item>
           <Label>
             <p>시간</p>
-            <p>가게명</p>
+            <p onClick={(e) => {
+              e.preventDefault();
+              history.push('/orderlist/store');
+            }}>가게명</p>
             <p>메뉴</p>
           </Label>
           <IonBadge>00,000원</IonBadge>

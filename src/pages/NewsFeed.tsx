@@ -42,7 +42,32 @@ const NewsFeed: React.FC<RouteComponentProps> = ({history}) => {
         return <InstaFeed/>;
     }
   }
-
+  function changeIcon(){
+    switch(segValue){
+      case "Feed":
+        return (
+          <>
+          <Segment value="comment" mode="md">
+            <img src="assets/icon/instag.png" alt="insta" style={{width:'50px'}}/>
+          </Segment>
+          <Segment value="Feed" mode="md">
+          <img src="assets/icon/picture.png" alt="insta" style={{width:'50px'}}/>
+          </Segment>
+          </>
+        )
+        default:
+          return(
+            <>
+          <Segment value="comment" mode="md">
+            <img src="assets/icon/insta.png" alt="insta" style={{width:'50px'}}/>
+          </Segment>
+          <Segment value="Feed" mode="md">
+          <img src="assets/icon/pictureg.png" alt="insta" style={{width:'50px'}}/>
+          </Segment>
+          </>
+          )
+    }
+  }
   return (
     <Page>
       <IonHeader>
@@ -83,12 +108,13 @@ const NewsFeed: React.FC<RouteComponentProps> = ({history}) => {
             setsegValue(`${e.detail.value}`);
           }}
         >
-          <Segment value="comment" mode="md">
+          {changeIcon()}
+          {/* <Segment value="comment" mode="md">
             Feed
           </Segment>
           <Segment value="Feed" mode="md">
             hashtag
-          </Segment>
+          </Segment> */}
         </IonSegment>
         {renderComponent()}
         {/* <div className="feedContainer">
