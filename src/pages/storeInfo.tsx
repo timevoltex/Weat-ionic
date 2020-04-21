@@ -9,7 +9,6 @@ import {
   IonListHeader,
 } from "@ionic/react";
 import { addCircleOutline } from "ionicons/icons";
-import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 type List = {
   count: number;
 };
